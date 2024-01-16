@@ -27,13 +27,18 @@ pub fn build_routes(pool: Pool<Postgres>) -> Router {
         .route("/api/agent/status", put(market::apis::editstatus))
         .route("/api/agents/refresh", post(market::apis::refreshagent))
         .route("/api/agent/user/:userid", get(market::apis::getbyuser))
+        
         .route(
-            "/api/users",
-            post(user::apis::create_user)
-                .get(user::apis::get_users)
-                .put(user::apis::edit_user),
+            "/users",
+            post(users::apis::create_user).get(users::apis::get_users), // .put(users::apis::edit_user),
         )
-        .route("/api/user/:useruid", get(user::apis::getauser))
-        .route("/api/user/pay", post(user::apis::userpay))
+        .route(
+            "/auth/login",
+            post(users::apis::login), //.post(users::apis::get_users), // .put(users::apis::edit_user),
+        )
+        .route(
+            "/auth/register",
+            post(users::apis::register), //.post(users::apis::get_users), // .put(users::apis::edit_user),
+        )
         .with_state(pool)
 }

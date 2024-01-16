@@ -15,13 +15,17 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 serde = "1.0.193"
 serde_json = "1.0.108"
-utoipa-redoc = { version = "2.0.0", features = ["axum"] }
-utoipa-rapidoc = { version = "2.0.0", features = ["axum"] }
-sqlx = { version = "0.7", features = [
+utoipa-redoc = { version = "3.0.0", features = ["axum"] }
+utoipa-rapidoc = { version = "3.0.0", features = ["axum"] }
+sqlx = { version = "0.7.3", features = [
     "runtime-tokio-rustls",
     "any",
     "postgres",
+    "chrono",
 ] }
-
+chrono = { version = "0.4.31", features = ["serde"] }
 utoipa = { version = "4.1.0", features = ["axum_extras"] }
-utoipa-swagger-ui = { version = "5.0.0", features = ["axum"] }
+utoipa-swagger-ui = { version = "6.0.0", features = ["axum"] }
+bcrypt = "0.15.0"
+jsonwebtoken = "9.2.0"
+dotenvy = "0.15.7"
