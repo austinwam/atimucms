@@ -1,7 +1,4 @@
-use axum::{
-    routing::{post},
-    Router,
-};
+use axum::{routing::post, Router};
 use sqlx::{Pool, Postgres};
 
 use crate::{account, users};
@@ -29,8 +26,7 @@ pub fn build_routes(pool: Pool<Postgres>) -> Router {
         // .route("/api/agent/user/:userid", get(market::apis::getbyuser))
         .route(
             "/account",
-            post(account::apis::createacc)
-                .put(account::apis::editacc),
+            post(account::apis::createacc).put(account::apis::editacc),
         )
         .route("/auth/login", post(users::apis::login))
         .route("/auth/register", post(users::apis::register))
