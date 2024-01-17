@@ -4,11 +4,11 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
+    "scrollTop": -691.2539,
     "scrollLeft": -1,
     "zoomLevel": 1,
     "show": 431,
-    "database": 16,
+    "database": 4,
     "databaseName": "rustcrm",
     "canvasType": "ERD",
     "language": 1,
@@ -314,15 +314,15 @@
           "C7IJT2wCmRLDKjG2Wky85"
         ],
         "ui": {
-          "x": 408,
-          "y": 596.195,
+          "x": 424,
+          "y": 591.195,
           "zIndex": 534,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1705491829461,
+          "updateAt": 1705492871911,
           "createAt": 1705491619708
         }
       },
@@ -370,7 +370,7 @@
         "tableId": "HoPrGJU82cdg7lpIRQzEL",
         "name": "userid",
         "comment": "",
-        "dataType": "",
+        "dataType": "serial",
         "default": "",
         "options": 2,
         "ui": {
@@ -381,7 +381,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1705489559541,
+          "updateAt": 1705492812534,
           "createAt": 1705485266290
         }
       },
@@ -921,7 +921,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1705492127436,
+          "updateAt": 1705492865475,
           "createAt": 1705488735553
         }
       },
@@ -1651,7 +1651,7 @@
       1705485465893,
       {
         "options(notNull)": 1705489173131,
-        "dataType": 1705489559539
+        "dataType": 1705492812529
       }
     ],
     "5FIsgCjP_psdWRon9jwaZ": [
@@ -1802,7 +1802,7 @@
       {
         "name": 1705488742685,
         "options(primaryKey)": 1705489529192,
-        "dataType": 1705492127434,
+        "dataType": 1705492865474,
         "options(notNull)": 1705489170014
       }
     ],
