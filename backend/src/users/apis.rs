@@ -2,7 +2,7 @@ use crate::common::jwt_auth::{decode_claims, generate_token};
 
 use super::db;
 
-use super::models::{CreateUser, UserLogin};
+use super::models::{CreateUser, Refreshuser, UserLogin};
 use axum::extract::{self, State};
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
@@ -200,6 +200,41 @@ pub async fn get_users(
 
     let results = db::allusers(pool).await.unwrap();
     Ok(Json(results))
+}
+
+#[utoipa::path(
+    post,
+    path = "/api/users/refresh",
+    responses(
+        (status = 200, description = "List all user successfully", body = Json<Vec<User>>),
+        (status = 500, description = "Internal server error when retrieving list of all user", body = Json<Vec<User>>)
+    )
+)]
+pub async fn refreshuser(
+    State(pool): State<PgPool>,
+    Json(reuser): Json<Refreshuser>,
+) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
+    let now = chrono::Utc::now();
+    let results = db::refeshuser(pool, reuser).await;
+
+    match results {
+        Ok(results) => {
+            let json_response = serde_json::json!({
+                "data": results,
+                "message": "successfull updated",
+                "timestamp":now.to_owned()
+            });
+            Ok(Json(json_response).into_response())
+        }
+        Err(err) => {
+            return Err((
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(json!({
+                    "status": "error",
+                    "message": format!("{:?}", err)})),
+            ));
+        }
+    }
 }
 
 // pub async fn getauser(

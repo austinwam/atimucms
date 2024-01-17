@@ -41,6 +41,11 @@ pub struct EditUser {
     pub role: Option<JsonValue>,
 }
 
+#[derive(Deserialize)]
+pub struct Refreshuser {
+    pub startdt: chrono::DateTime<chrono::Utc>,
+}
+
 #[derive(sqlx::FromRow, Deserialize, Serialize, Debug, ToSchema)]
 pub struct UserLogin {
     pub email: String,

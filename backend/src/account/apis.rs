@@ -14,7 +14,7 @@ use serde_json::json;
 use sqlx::PgPool;
 
 use super::db;
-use super::models::CreateAccount;
+use super::models::{Account, CreateAccount, Refreshacc, Updateacc};
 
 pub async fn createacc(
     extract::State(pool): extract::State<PgPool>,
@@ -39,16 +39,14 @@ pub async fn createacc(
     }
 }
 
-pub async fn getaccs(
-    State(pool): State<PgPool>,
-) -> Result<impl IntoResponse, Json<Vec<Transaction>>> {
+pub async fn getaccs(State(pool): State<PgPool>) -> Result<impl IntoResponse, Json<Vec<Account>>> {
     let results = db::alltrans(pool).await.unwrap();
     Ok(Json(results))
 }
 
 pub async fn edittrans(
     extract::State(pool): extract::State<PgPool>,
-    Json(editran): Json<Transupdate>,
+    Json(editran): Json<Updateacc>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::edittrans(pool, editran).await;
     match trans {
@@ -71,7 +69,7 @@ pub async fn edittrans(
 pub async fn refreshtrans(
     State(pool): State<PgPool>,
 
-    Json(refagent): Json<Refreshtrans>,
+    Json(refagent): Json<Refreshacc>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let now = chrono::Utc::now();
     let results = db::refeshtrans(pool, refagent).await;

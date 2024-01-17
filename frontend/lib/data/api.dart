@@ -28,12 +28,12 @@ class Apirequest {
     var response = await http.post(eurl, body: data, headers: headers);
   }
 
-  Future<void> refresh(kind) async {
+  Future<void> refresh(datatype) async {
     var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
-    var timestamp = Sharedpref().gettime(Kind.string.text);
+    var timestamp = Sharedpref().gettime(datatype);
     var serverurl = "http://127.0.0.1:8000/refresh";
     var url = Uri.https(serverurl);
-    var data = {"data": "$kind", "timestamp": "$timestamp"};
+    var data = {"data": "$datatype", "timestamp": "$timestamp"};
     var headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',

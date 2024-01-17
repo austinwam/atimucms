@@ -1,4 +1,4 @@
-use super::models::{CreateUser, User};
+use super::models::{CreateUser, Refreshuser, User};
 use bcrypt::{hash, DEFAULT_COST};
 use sqlx::PgPool;
 
@@ -25,21 +25,14 @@ pub async fn getbyemail(pool: PgPool, email: String) -> Result<User, sqlx::Error
         .await?;
     Ok(euser)
 }
-
-// pub async fn get_user_by_email(username: &str, state: &SharedState) -> Option<User> {
-//     let query_get = sqlx::query_as::<_, User>("SELECT * FROM users WHERE username = $1")
-//         .bind(username)
-//         .fetch_one(&state.pgpool)
-//         .await;
-
-//     match query_get {
-//         Ok(user) => Some(user),
-//         Err(e) => {
-//             tracing::error!("{}", e);
-//             None
-//         }
-//     }
-// }
+pub async fn refeshuser(pool: PgPool, reuser: Refreshuser) -> Result<Vec<User>, sqlx::Error> {
+    let fnsql: &str = "SELECT * FROM users WHERE updated_at BETWEEN $1 AND Now()";
+    let edagent = sqlx::query_as::<_, User>(fnsql)
+        .bind(reuser.startdt)
+        .fetch_all(&pool)
+        .await?;
+    Ok(edagent)
+}
 
 pub async fn allusers(pool: PgPool) -> Result<Vec<User>, sqlx::Error> {
     let fnsql = "SELECT * FROM users";
@@ -64,4 +57,19 @@ pub async fn allusers(pool: PgPool) -> Result<Vec<User>, sqlx::Error> {
 //         .fetch_one(&pool)
 //         .await?;
 //     Ok(newuser)
+// }
+
+// pub async fn get_user_by_email(username: &str, state: &SharedState) -> Option<User> {
+//     let query_get = sqlx::query_as::<_, User>("SELECT * FROM users WHERE username = $1")
+//         .bind(username)
+//         .fetch_one(&state.pgpool)
+//         .await;
+
+//     match query_get {
+//         Ok(user) => Some(user),
+//         Err(e) => {
+//             tracing::error!("{}", e);
+//             None
+//         }
+//     }
 // }
