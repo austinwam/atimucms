@@ -9,19 +9,20 @@ use axum::extract::{self, State};
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
 use axum::Json;
+use hyper::HeaderMap;
 use serde_json::json;
 use sqlx::PgPool;
 
 use super::db;
-use super::models::{Createtrans, Refreshtrans, Transaction, Transupdate};
+use super::models::CreateAccount;
 
-pub async fn createtrans(
+pub async fn createacc(
     extract::State(pool): extract::State<PgPool>,
-    Json(ntrans): Json<Createtrans>,
+    Json(accountn): Json<CreateAccount>,
+    headers: HeaderMap,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
-    let trans = db::addtodb(pool, ntrans).await;
+    let trans = db::addtodb(pool, accountn).await;
     match trans {
-
         Ok(transdata) => {
             let json_response = serde_json::json!({
                 "message": "successfull added",
@@ -35,12 +36,10 @@ pub async fn createtrans(
                 Json(json!({"status": "error","message": format!("{:?}", err)})),
             ));
         }
-        // Ok(agent) => Ok(Json(Transaction::from(agent))),
-        // Err(e) => Err(ApiError::new_internal(e.to_string())),
     }
 }
 
-pub async fn getall(
+pub async fn getaccs(
     State(pool): State<PgPool>,
 ) -> Result<impl IntoResponse, Json<Vec<Transaction>>> {
     let results = db::alltrans(pool).await.unwrap();

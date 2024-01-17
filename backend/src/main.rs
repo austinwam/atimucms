@@ -2,8 +2,9 @@ use std::{
     net::{Ipv4Addr, SocketAddr},
     sync::Arc,
 };
+mod account;
+mod common;
 mod users;
-mod  common;
 use axum::{routing, Router};
 use std::io::Error;
 use tokio::net::TcpListener;

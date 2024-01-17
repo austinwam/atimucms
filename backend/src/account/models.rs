@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
-pub struct Createtrans {
+pub struct CreateAccount {
     pub userid: i32,
     pub username: String,
     pub status: String,
@@ -10,7 +10,7 @@ pub struct Createtrans {
 }
 
 #[derive(sqlx::FromRow, Deserialize, Serialize)]
-pub struct Transaction {
+pub struct Account {
     pub transid: i32,
     pub userid: i32,
     pub username: String,

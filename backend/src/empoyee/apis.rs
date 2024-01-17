@@ -2,7 +2,6 @@
 createtrans
 edittrans
 refreshtrans
-
 */
 
 use axum::extract::{self, State};
@@ -21,7 +20,6 @@ pub async fn createtrans(
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::addtodb(pool, ntrans).await;
     match trans {
-
         Ok(transdata) => {
             let json_response = serde_json::json!({
                 "message": "successfull added",
@@ -34,9 +32,8 @@ pub async fn createtrans(
                 StatusCode::INTERNAL_SERVER_ERROR,
                 Json(json!({"status": "error","message": format!("{:?}", err)})),
             ));
-        }
-        // Ok(agent) => Ok(Json(Transaction::from(agent))),
-        // Err(e) => Err(ApiError::new_internal(e.to_string())),
+        } // Ok(agent) => Ok(Json(Transaction::from(agent))),
+          // Err(e) => Err(ApiError::new_internal(e.to_string())),
     }
 }
 
@@ -71,7 +68,6 @@ pub async fn edittrans(
 
 pub async fn refreshtrans(
     State(pool): State<PgPool>,
-
     Json(refagent): Json<Refreshtrans>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let now = chrono::Utc::now();
