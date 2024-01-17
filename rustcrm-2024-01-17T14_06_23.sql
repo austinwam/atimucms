@@ -1,3 +1,4 @@
+
 CREATE TABLE account
 (
   accountid  serial     ,
@@ -11,7 +12,7 @@ CREATE TABLE account
 
 CREATE TABLE meetings
 (
-  meetid     serial       NOT NULL,
+  meetid     serial      ,
   about      varchar(150),
   status     varchar(20) ,
   update_at  timestamptz  DEFAULT NOW,
@@ -21,7 +22,7 @@ CREATE TABLE meetings
 
 CREATE TABLE task
 (
-  taskid serial       NOT NULL,
+  taskid             ,
   about  varchar(200),
   status varchar(20) ,
   userid int          NOT NULL,
@@ -30,7 +31,7 @@ CREATE TABLE task
 
 CREATE TABLE users
 (
-  userid     SERIAL      NOT NULL,
+  userid                ,
   username   VARCHAR(70) NOT NULL,
   email      VARCHAR(80) NOT NULL,
   phone      VARCHAR(20) NOT NULL,
