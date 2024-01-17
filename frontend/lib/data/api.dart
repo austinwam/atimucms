@@ -1,26 +1,43 @@
 import 'dart:convert';
 
+import 'package:frontend/data/sharedata.dart';
 import 'package:frontend/util/util.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
 class Apirequest {
-  Future<void> getwithtoken(url) async {
+  Future<void> postdata(url, data) async {
+    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
     var eurl = Uri.parse(url);
-    var response = await http.get(eurl);
-    await manageresp(response);
-  }
-
-  // void get(params) {}
-  // void postwithtoken(params) {}
-  // void putwithtoken(params) {}
-
-  Future<void> refresh(serverurl, data) async {
-    var url = Uri.https(serverurl);
     var headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
-      "Authorization": "Some token"
+      "Authorization": "Bear $token"
+    };
+    var response = await http.post(eurl, body: data, headers: headers);
+  }
+
+  Future<void> putwithtoken(url, data) async {
+    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var eurl = Uri.parse(url);
+    var headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      "Authorization": "Bear $token"
+    };
+    var response = await http.post(eurl, body: data, headers: headers);
+  }
+
+  Future<void> refresh(kind) async {
+    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var timestamp = Sharedpref().gettime(Kind.string.text);
+    var serverurl = "http://127.0.0.1:8000/refresh";
+    var url = Uri.https(serverurl);
+    var data = {"data": "$kind", "timestamp": "$timestamp"};
+    var headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      "Authorization": "Bear $token"
     };
     var response = await http.post(url, body: data, headers: headers);
     await manageresp(response);
