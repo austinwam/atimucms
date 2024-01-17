@@ -1,10 +1,5 @@
-/*
-createtrans
-edittrans
-refreshtrans
-
-*/
-
+use super::db;
+use super::models::{Account, CreateAccount, Refreshacc, Updateacc};
 use axum::extract::{self, State};
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
@@ -13,13 +8,11 @@ use hyper::HeaderMap;
 use serde_json::json;
 use sqlx::PgPool;
 
-use super::db;
-use super::models::{Account, CreateAccount, Refreshacc, Updateacc};
-
 pub async fn createacc(
+    headers: HeaderMap,
     extract::State(pool): extract::State<PgPool>,
     Json(accountn): Json<CreateAccount>,
-    headers: HeaderMap,
+    
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::addtodb(pool, accountn).await;
     match trans {
@@ -40,15 +33,15 @@ pub async fn createacc(
 }
 
 pub async fn getaccs(State(pool): State<PgPool>) -> Result<impl IntoResponse, Json<Vec<Account>>> {
-    let results = db::alltrans(pool).await.unwrap();
+    let results = db::allaccs(pool).await.unwrap();
     Ok(Json(results))
 }
 
-pub async fn edittrans(
+pub async fn editacc(
     extract::State(pool): extract::State<PgPool>,
     Json(editran): Json<Updateacc>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
-    let trans = db::edittrans(pool, editran).await;
+    let trans = db::editaccs(pool, editran).await;
     match trans {
         Ok(edtrans) => {
             let json_response = serde_json::json!({
@@ -66,13 +59,12 @@ pub async fn edittrans(
     }
 }
 
-pub async fn refreshtrans(
+pub async fn refreshacc(
     State(pool): State<PgPool>,
-
     Json(refagent): Json<Refreshacc>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let now = chrono::Utc::now();
-    let results = db::refeshtrans(pool, refagent).await;
+    let results = db::refeshaccs(pool, refagent).await;
 
     match results {
         Ok(results) => {
