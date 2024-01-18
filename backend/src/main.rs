@@ -1,17 +1,16 @@
- 
 mod account;
-mod router;
 mod common;
-mod users;
 mod db;
+mod payments;
+mod router;
 mod tasks;
+mod users;
 use axum::{routing::get, Router};
 use hyper::StatusCode;
 use utoipa::OpenApi;
 use utoipa_rapidoc::RapiDoc;
 use utoipa_redoc::{Redoc, Servable};
 use utoipa_swagger_ui::SwaggerUi;
-
 
 #[tokio::main]
 async fn main() {
@@ -42,9 +41,6 @@ async fn main() {
 async fn health_check() -> StatusCode {
     StatusCode::OK
 }
-
-
-
 
 #[derive(OpenApi)]
 #[openapi(

@@ -13,15 +13,14 @@ use serde_json::json;
 use sqlx::PgPool;
 
 use super::db;
-use super::models::{Createtrans, Refreshtrans, Transaction, Transupdate};
+use super::models::{Createpayment, Payment, Refreshpayment, Updatepayment};
 
 pub async fn createtrans(
     extract::State(pool): extract::State<PgPool>,
-    Json(ntrans): Json<Createtrans>,
+    Json(ntrans): Json<Createpayment>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::addtodb(pool, ntrans).await;
     match trans {
-
         Ok(transdata) => {
             let json_response = serde_json::json!({
                 "message": "successfull added",
@@ -34,22 +33,19 @@ pub async fn createtrans(
                 StatusCode::INTERNAL_SERVER_ERROR,
                 Json(json!({"status": "error","message": format!("{:?}", err)})),
             ));
-        }
-        // Ok(agent) => Ok(Json(Transaction::from(agent))),
-        // Err(e) => Err(ApiError::new_internal(e.to_string())),
+        } // Ok(agent) => Ok(Json(Transaction::from(agent))),
+          // Err(e) => Err(ApiError::new_internal(e.to_string())),
     }
 }
 
-pub async fn getall(
-    State(pool): State<PgPool>,
-) -> Result<impl IntoResponse, Json<Vec<Transaction>>> {
+pub async fn getall(State(pool): State<PgPool>) -> Result<impl IntoResponse, Json<Vec<Payment>>> {
     let results = db::alltrans(pool).await.unwrap();
     Ok(Json(results))
 }
 
 pub async fn edittrans(
     extract::State(pool): extract::State<PgPool>,
-    Json(editran): Json<Transupdate>,
+    Json(editran): Json<Updatepayment>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::edittrans(pool, editran).await;
     match trans {
@@ -72,7 +68,7 @@ pub async fn edittrans(
 pub async fn refreshtrans(
     State(pool): State<PgPool>,
 
-    Json(refagent): Json<Refreshtrans>,
+    Json(refagent): Json<Refreshpayment>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let now = chrono::Utc::now();
     let results = db::refeshtrans(pool, refagent).await;
