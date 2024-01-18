@@ -47,6 +47,7 @@ CREATE TABLE meetings
   meetid     serial       NULL    ,
   about      varchar(150) NULL    ,
   status     varchar(20)  NULL    ,
+ 
   update_at  timestamptz  NULL     DEFAULT NOW,
   created_at              NULL     DEFAULT NOW,
   PRIMARY KEY (meetid)

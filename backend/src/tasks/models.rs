@@ -1,11 +1,21 @@
 use serde::{Deserialize, Serialize};
 
+// type Meetings {
+//     meetid: ID
+//     userid: Int
+//     about: String
+//     status: String
+//     datetime: String
+//     updateAt: String
+//     createdAt: String
+//   }
+
 #[derive(Deserialize)]
 pub struct Createtask {
-    pub createdby: i32,
-    pub status: String,
     pub userid: i32,
     pub about: String,
+    pub status: String,
+    pub datetime: i32,
 }
 
 #[derive(sqlx::FromRow, Deserialize, Serialize)]
@@ -21,7 +31,7 @@ pub struct Task {
 
 #[derive(Deserialize)]
 pub struct Updatetask {
-    pub transid: i32,
+    pub taskid: i32,
     pub status: String,
     pub userid: i32,
     pub about: String,

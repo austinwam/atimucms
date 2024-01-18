@@ -1,16 +1,22 @@
 use serde::{Deserialize, Serialize};
 
+// meetid: ID
+// userid: Int
+// about: String
+// status: String
+// updateAt: String
+// createdAt: String
+// datetime: String
 #[derive(Deserialize)]
-pub struct Createtrans {
+pub struct Createmeet {
     pub userid: i32,
-    pub username: String,
+    pub about: String,
     pub status: String,
-    pub count: i32,
-    pub amount: i32,
+    pub datetime: String,
 }
 
 #[derive(sqlx::FromRow, Deserialize, Serialize)]
-pub struct Transaction {
+pub struct Meet {
     pub transid: i32,
     pub userid: i32,
     pub username: String,

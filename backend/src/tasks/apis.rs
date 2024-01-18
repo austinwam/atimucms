@@ -37,7 +37,7 @@ pub async fn createtask(
 }
 
 pub async fn getall(State(pool): State<PgPool>) -> Result<impl IntoResponse, Json<Vec<Task>>> {
-    let results = db::alltrans(pool).await.unwrap();
+    let results = db::alltask(pool).await.unwrap();
     Ok(Json(results))
 }
 
@@ -45,7 +45,7 @@ pub async fn edittask(
     extract::State(pool): extract::State<PgPool>,
     Json(uptask): Json<Updatetask>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
-    let trans = db::edittrans(pool, uptask).await;
+    let trans = db::edittask(pool, uptask).await;
     match trans {
         Ok(edtrans) => {
             let json_response = serde_json::json!({
