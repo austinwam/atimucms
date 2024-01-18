@@ -15,7 +15,7 @@ use sqlx::PgPool;
 use super::db;
 use super::models::{Createpayment, Payment, Refreshpayment, Updatepayment};
 
-pub async fn createtrans(
+pub async fn createpayment(
     extract::State(pool): extract::State<PgPool>,
     Json(ntrans): Json<Createpayment>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
@@ -43,7 +43,7 @@ pub async fn getall(State(pool): State<PgPool>) -> Result<impl IntoResponse, Jso
     Ok(Json(results))
 }
 
-pub async fn edittrans(
+pub async fn editpayment(
     extract::State(pool): extract::State<PgPool>,
     Json(editran): Json<Updatepayment>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
@@ -65,7 +65,7 @@ pub async fn edittrans(
     }
 }
 
-pub async fn refreshtrans(
+pub async fn refreshpayment(
     State(pool): State<PgPool>,
 
     Json(refagent): Json<Refreshpayment>,
