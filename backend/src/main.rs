@@ -4,7 +4,7 @@ mod router;
 mod common;
 mod users;
 mod db;
-
+mod tasks;
 use axum::{routing::get, Router};
 use hyper::StatusCode;
 use utoipa::OpenApi;

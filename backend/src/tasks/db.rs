@@ -1,46 +1,58 @@
 use sqlx::PgPool;
 
-use super::models::{Createtrans, Refreshtrans, Transaction, Transupdate};
+use super::models::{Createtask, Refreshtask, Task, Updatetask};
 
-pub async fn addtodb(pool: PgPool, createtran: Createtrans) -> Result<Transaction, sqlx::Error> {
-    let sqlurl="INSERT INTO transactions (userid,username,status,count,amount) VALUES ($1,$2,$3,$4,$5)  RETURNING  *";
-    let nagent = sqlx::query_as::<_, Transaction>(sqlurl)
-        .bind(createtran.userid)
-        .bind(createtran.username)
+pub async fn addtodb(pool: PgPool, createtran: Createtask) -> Result<Task, sqlx::Error> {
+    let sqlurl = "INSERT INTO task 
+    (about,status,createdby) VALUES ($1,$2,$3)  RETURNING  *";
+    let nagent = sqlx::query_as::<_, Task>(sqlurl)
+        .bind(createtran.about)
         .bind(createtran.status)
-        .bind(createtran.count)
-        .bind(createtran.amount)
+        .bind(createtran.createdby)
         .fetch_one(&pool)
         .await?;
     Ok(nagent)
 }
+// CREATE TABLE task
+// (
+//   taskid     serial       NULL    ,
+//   about      varchar(200) NULL    ,
+//   status     varchar(20)  NULL    ,
+//   userid     int          NOT NULL,
+//   createdby  int          NOT NULL,
+//   updated_at timestamptz  NOT NULL DEFAULT NOW,
+//   created_at timestamptz  NOT NULL DEFAULT NOW,
+//   PRIMARY KEY (taskid)
+// );
 
-pub async fn alltrans(pool: PgPool) -> Result<Vec<Transaction>, sqlx::Error> {
-    let fnsql = "SELECT * FROM transactions";
-    let agents = sqlx::query_as::<_, Transaction>(fnsql)
+pub async fn alltrans(pool: PgPool) -> Result<Vec<Task>, sqlx::Error> {
+    let fnsql = "SELECT * FROM task";
+    let agents = sqlx::query_as::<_, Task>(fnsql)
         .fetch_all(&pool)
         .await
         .unwrap();
     Ok(agents)
 }
 
-pub async fn edittrans(pool: PgPool, edittrans: Transupdate) -> Result<Transaction, sqlx::Error> {
+pub async fn edittrans(pool: PgPool, edittrans: Updatetask) -> Result<Task, sqlx::Error> {
     let fnsql: &str =
-        "UPDATE transactions SET status = $1,updated_at= Now() WHERE transid = $2 RETURNING *";
-    let edagent = sqlx::query_as::<_, Transaction>(fnsql)
+        "UPDATE task SET status = $1,userid=$2,about=$3,updated_at= Now() WHERE transid = $4 RETURNING *";
+    let edagent = sqlx::query_as::<_, Task>(fnsql)
         .bind(edittrans.status)
+        .bind(edittrans.userid)
+        .bind(edittrans.about)
         .bind(edittrans.transid)
         .fetch_one(&pool)
         .await?;
     Ok(edagent)
 }
-pub async fn refeshtrans(
-    pool: PgPool,
-    refreshtrans: Refreshtrans,
-) -> Result<Vec<Transaction>, sqlx::Error> {
-    let fnsql: &str = "SELECT * FROM transactions WHERE updated_at BETWEEN $1 AND Now()";
-    let edagent = sqlx::query_as::<_, Transaction>(fnsql)
-        .bind(refreshtrans.startdt)
+
+ 
+
+pub async fn refeshtask(pool: PgPool, refreshtask: Refreshtask) -> Result<Vec<Task>, sqlx::Error> {
+    let fnsql: &str = "SELECT * FROM task WHERE updated_at BETWEEN $1 AND Now()";
+    let edagent = sqlx::query_as::<_, Task>(fnsql)
+        .bind(refreshtask.startdt)
         .fetch_all(&pool)
         .await?;
     Ok(edagent)

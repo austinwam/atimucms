@@ -4,7 +4,6 @@ edittrans
 refreshtrans
 
 */
-
 use axum::extract::{self, State};
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
@@ -13,15 +12,14 @@ use serde_json::json;
 use sqlx::PgPool;
 
 use super::db;
-use super::models::{Createtrans, Refreshtrans, Transaction, Transupdate};
+use super::models::{Createtask, Refreshtask, Task, Updatetask};
 
-pub async fn createtrans(
+pub async fn createtask(
     extract::State(pool): extract::State<PgPool>,
-    Json(ntrans): Json<Createtrans>,
+    Json(newtask): Json<Createtask>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
-    let trans = db::addtodb(pool, ntrans).await;
+    let trans = db::addtodb(pool, newtask).await;
     match trans {
-
         Ok(transdata) => {
             let json_response = serde_json::json!({
                 "message": "successfull added",
@@ -35,23 +33,19 @@ pub async fn createtrans(
                 Json(json!({"status": "error","message": format!("{:?}", err)})),
             ));
         }
-        // Ok(agent) => Ok(Json(Transaction::from(agent))),
-        // Err(e) => Err(ApiError::new_internal(e.to_string())),
     }
 }
 
-pub async fn getall(
-    State(pool): State<PgPool>,
-) -> Result<impl IntoResponse, Json<Vec<Transaction>>> {
+pub async fn getall(State(pool): State<PgPool>) -> Result<impl IntoResponse, Json<Vec<Task>>> {
     let results = db::alltrans(pool).await.unwrap();
     Ok(Json(results))
 }
 
-pub async fn edittrans(
+pub async fn edittask(
     extract::State(pool): extract::State<PgPool>,
-    Json(editran): Json<Transupdate>,
+    Json(uptask): Json<Updatetask>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
-    let trans = db::edittrans(pool, editran).await;
+    let trans = db::edittrans(pool, uptask).await;
     match trans {
         Ok(edtrans) => {
             let json_response = serde_json::json!({
@@ -69,13 +63,13 @@ pub async fn edittrans(
     }
 }
 
-pub async fn refreshtrans(
+pub async fn refreshtask(
     State(pool): State<PgPool>,
 
-    Json(refagent): Json<Refreshtrans>,
+    Json(refagent): Json<Refreshtask>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let now = chrono::Utc::now();
-    let results = db::refeshtrans(pool, refagent).await;
+    let results = db::refeshtask(pool, refagent).await;
 
     match results {
         Ok(results) => {

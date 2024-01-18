@@ -1,33 +1,33 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
-pub struct Createtrans {
-    pub userid: i32,
-    pub username: String,
+pub struct Createtask {
+    pub createdby: i32,
     pub status: String,
-    pub count: i32,
-    pub amount: i32,
+    pub userid: i32,
+    pub about: String,
 }
 
 #[derive(sqlx::FromRow, Deserialize, Serialize)]
-pub struct Transaction {
-    pub transid: i32,
-    pub userid: i32,
-    pub username: String,
+pub struct Task {
+    pub taskid: i32,
+    pub createdby: i32,
     pub status: String,
-    pub count: i32,
-    pub amount: i32,
+    pub userid: i32,
+    pub about: String,
     pub updated_at: chrono::DateTime<chrono::Utc>,
     pub created_at: chrono::DateTime<chrono::Utc>,
 }
 
 #[derive(Deserialize)]
-pub struct Transupdate {
+pub struct Updatetask {
     pub transid: i32,
     pub status: String,
+    pub userid: i32,
+    pub about: String,
 }
 
 #[derive(Deserialize)]
-pub struct Refreshtrans {
+pub struct Refreshtask {
     pub startdt: chrono::DateTime<chrono::Utc>,
 }

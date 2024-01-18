@@ -71,6 +71,7 @@ CREATE TABLE task
   about      varchar(200) NULL    ,
   status     varchar(20)  NULL    ,
   userid     int          NOT NULL,
+  createdby  int          NOT NULL,
   updated_at timestamptz  NOT NULL DEFAULT NOW,
   created_at timestamptz  NOT NULL DEFAULT NOW,
   PRIMARY KEY (taskid)
