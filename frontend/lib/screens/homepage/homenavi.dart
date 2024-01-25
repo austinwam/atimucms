@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/users/userpage.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../task/tasklist.dart';
+import 'homecard.dart';
 
 class Homenavipage extends StatelessWidget {
   const Homenavipage({super.key});
@@ -30,41 +32,42 @@ class Homenavipage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Card(
-                child: SizedBox(
-                  height: 7.h,
-                  width: 22.w,
-                  child: const Center(
-                    child: Text("user"),
-                  ),
-                ),
+              Homecard(
+                height: 7.h,
+                width: 22.w,
+                ontap: () {
+                  Navigator.push<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const Userpage(),
+                    ),
+                  );
+                },
+                name: "user",
               ),
-              Card(
-                child: SizedBox(
-                  height: 7.h,
-                  width: 22.w,
-                  child: const Center(
-                    child: Text("products"),
-                  ),
-                ),
+              Homecard(
+                height: 7.h,
+                width: 22.w,
+                ontap: () {
+                  print("object");
+                },
+                name: "products",
               ),
-              Card(
-                child: SizedBox(
-                  height: 7.h,
-                  width: 22.w,
-                  child: const Center(
-                    child: Text("meetings"),
-                  ),
-                ),
+              Homecard(
+                height: 7.h,
+                width: 22.w,
+                ontap: () {
+                  print("meetings");
+                },
+                name: "meetings",
               ),
-              Card(
-                child: SizedBox(
-                  height: 7.h,
-                  width: 22.w,
-                  child: const Center(
-                    child: Text("tasks"),
-                  ),
-                ),
+              Homecard(
+                height: 7.h,
+                width: 22.w,
+                ontap: () {
+                  print("tasks");
+                },
+                name: "tasks",
               ),
             ],
           ),
