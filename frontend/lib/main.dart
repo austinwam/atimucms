@@ -1,9 +1,20 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/router.dart';
+import 'package:frontend/providers/accountprovider.dart';
+
+import 'package:frontend/screens/screens.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Accountprovider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,31 +22,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'rustcrm',
-      debugShowCheckedModeBanner: false,
-      builder: BotToastInit(),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return MaterialApp(
+          title: 'rusterp/cms',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+              // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              //   backgroundColor: Color.fromARGB(255, 17, 140, 107),
 
-      routeInformationParser: MyAppRouter().router.routeInformationParser,
-      routerDelegate: MyAppRouter().router.routerDelegate,
-      routeInformationProvider: MyAppRouter().router.routeInformationProvider,
-      // home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(child: Text("welcome")),
+              // ),
+              appBarTheme: const AppBarTheme(
+            color: Color.fromARGB(255, 17, 140, 107),
+          )),
+          home: const Splashpage(),
+        );
+      },
     );
   }
 }

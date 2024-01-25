@@ -12,6 +12,17 @@ class Apirequest {
     var headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
+    };
+    var response = await http.post(eurl, body: data, headers: headers);
+    await manageresp(response);
+  }
+
+  Future<void> postdatawithtoken(url, data) async {
+    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var eurl = Uri.parse(url);
+    var headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
       "Authorization": "Bear $token"
     };
     var response = await http.post(eurl, body: data, headers: headers);

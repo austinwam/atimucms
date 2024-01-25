@@ -12,7 +12,6 @@ pub async fn createacc(
     headers: HeaderMap,
     extract::State(pool): extract::State<PgPool>,
     Json(accountn): Json<CreateAccount>,
-    
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::addtodb(pool, accountn).await;
     match trans {
@@ -39,7 +38,7 @@ pub async fn getaccs(State(pool): State<PgPool>) -> Result<impl IntoResponse, Js
 
 pub async fn editacc(
     extract::State(pool): extract::State<PgPool>,
-    Json(editran): Json<Updateacc>,
+    Json(editran): Json<Updateacc> ,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let trans = db::editaccs(pool, editran).await;
     match trans {
@@ -53,7 +52,11 @@ pub async fn editacc(
         Err(err) => {
             return Err((
                 StatusCode::INTERNAL_SERVER_ERROR,
-                Json(json!({"status": "error","message": format!("{:?}", err)})),
+                Json(json!(
+                    {
+                    "status": "error",
+                    "message": format!("{:?}", err)
+                })),
             ));
         }
     }
