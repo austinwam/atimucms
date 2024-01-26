@@ -9,6 +9,13 @@ class Adduser extends StatelessWidget {
       appBar: AppBar(
         title: const Text("add user"),
       ),
+      body: Column(children: [
+        MaterialButton(
+          onPressed: () {},
+          color: Colors.green,
+          child: const Text("add user"),
+        )
+      ]),
     );
   }
 }
