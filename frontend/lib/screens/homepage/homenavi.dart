@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/screens/users/userpage.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
-import '../task/tasklist.dart';
+import '../leads/leads.dart';
 import 'homecard.dart';
 
 class Homenavipage extends StatelessWidget {
@@ -65,17 +64,31 @@ class Homenavipage extends StatelessWidget {
                 height: 7.h,
                 width: 22.w,
                 ontap: () {
-                  print("tasks");
+                  Navigator.push<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const Leadpage(),
+                    ),
+                  );
                 },
-                name: "tasks",
+                name: "leads",
               ),
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Text(
-              "Task",
-              style: TextStyle(fontSize: 20.sp),
+            padding: const EdgeInsets.only(left: 8.0, right: 8),
+            child: Row(
+              children: [
+                Text(
+                  "Task",
+                  style: TextStyle(fontSize: 20.sp),
+                ),
+                const Spacer(),
+                Text(
+                  "more...",
+                  style: TextStyle(fontSize: 20.sp, color: Colors.blue),
+                ),
+              ],
             ),
           ),
           const Divider(),
@@ -96,10 +109,13 @@ class Homenavipage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SizedBox(
-                                width: 65.w,
-                                height: 6.h,
-                                child: const Text(
-                                    "Well, whatever we do, I'd like to do it as a family.")),
+                              width: 65.w,
+                              height: 6.h,
+                              child: Text(
+                                "Well, whatever we do, I'd like to do it as a family.",
+                                style: TextStyle(fontSize: 15.5.sp),
+                              ),
+                            ),
                             const VerticalDivider(),
                             SizedBox(
                                 width: 26.w,
