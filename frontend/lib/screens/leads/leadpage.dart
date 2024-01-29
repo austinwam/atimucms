@@ -12,6 +12,10 @@ class Leadpage extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          Leadslist(
+            height: 98.h,
+            width: 98.w,
+          ),
           Positioned(
               bottom: 0.0001,
               height: 4.h,
@@ -24,5 +28,34 @@ class Leadpage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class Leadslist extends StatelessWidget {
+  final double width, height;
+  const Leadslist({super.key, required this.width, required this.height});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: height,
+        width: width,
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("name"),
+                  Text("072323233"),
+                  Text("status"),
+                  Text("assignedto"),
+                ],
+              ),
+            );
+          },
+        ));
   }
 }
