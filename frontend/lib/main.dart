@@ -1,6 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/providers/accountprovider.dart';
+import 'package:frontend/providers/providers.dart';
 
 import 'package:frontend/screens/screens.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +10,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => Leadprovider()),
         ChangeNotifierProvider(create: (_) => Accountprovider()),
       ],
       child: const MyApp(),

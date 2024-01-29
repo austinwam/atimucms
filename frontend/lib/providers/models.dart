@@ -81,6 +81,32 @@ class Reportmodel {
   }
 }
 
+class Leadmodels {
+  bool? active;
+  String? contact, createat, editat, name;
+  int? managedby, ownerid;
+
+  Leadmodels({
+    this.active,
+    this.contact,
+    this.createat,
+    this.editat,
+    this.managedby,
+    this.name,
+    this.ownerid,
+  });
+
+  Leadmodels.fromMap(Map<String, dynamic> map) {
+    active = map['active'];
+    contact = map['contact'];
+    createat = map['createat'];
+    editat = map['editat'];
+    managedby = map['managedby'];
+    name = map['name'];
+    ownerid = map['ownerid'];
+  }
+}
+
 class Ownmodel {
   bool? active;
   String? contact, createat, editat, name;

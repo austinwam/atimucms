@@ -18,7 +18,7 @@ class Leadpage extends StatelessWidget {
               child: MaterialButton(
                   height: 5.h,
                   minWidth: 100.w,
-                  color: Colors.green,
+                  color: const Color.fromARGB(255, 17, 140, 107),
                   child: const Text("add lead"),
                   onPressed: () {}))
         ],
