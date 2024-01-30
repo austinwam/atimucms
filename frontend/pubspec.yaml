@@ -53,10 +53,10 @@ dependencies:
   loading_animation_widget:
   gap: ^3.0.1
   path_provider:
-  # statistics: ^1.0.26
+  statistics: ^1.0.26
   responsive_sizer: ^3.3.0+1
-  custom_calendar_viewer: ^0.4.9
-  intl: ^0.19.0
+  # custom_calendar_viewer: ^0.4.9
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

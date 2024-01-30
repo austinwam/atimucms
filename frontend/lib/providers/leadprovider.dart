@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 
 class Leadprovider with ChangeNotifier {
+  List statuss = ["new", "contracted", "checkup"];
+  String? status;
   bool? isload;
   List<Leadmodels> _leadmodels = [];
 
@@ -19,5 +21,9 @@ class Leadprovider with ChangeNotifier {
     isload = val;
     notifyListeners();
   }
-  
+
+  void setstatus(val) {
+    status = val;
+    notifyListeners();
+  }
 }

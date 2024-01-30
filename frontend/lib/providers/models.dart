@@ -182,11 +182,11 @@ class Agentmodel {
   }
 }
 
-class Repairmodel {
+class Meetmodel {
   String? about, contact, createdat, image, name;
   bool? active;
   int? repairid, userid;
-  Repairmodel({
+  Meetmodel({
     this.about,
     this.active,
     this.contact,
@@ -197,7 +197,7 @@ class Repairmodel {
     this.userid,
   });
 
-  Repairmodel.fromMap(Map<String, dynamic> map) {
+  Meetmodel.fromMap(Map<String, dynamic> map) {
     about = map['about'];
     active = map['active'];
     contact = map['contact'];
