@@ -14,3 +14,4 @@ ERP stands for enterprise resource planning, but what does ERP mean? The simples
 - [ ] Inventory management.
 - [ ] Schedule management.
 - [ ] accounting management.
+- [ ] Point of sale.
