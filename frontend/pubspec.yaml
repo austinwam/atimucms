@@ -43,7 +43,7 @@ dependencies:
   timeago: ^3.6.1
   encrypt: ^5.0.3
   easy_refresh: ^3.3.4
-  flutter_animate: ^4.4.1
+  flutter_animate: ^4.5.0
   sembast: ^3.5.0+1
   sembast_web: ^2.2.0
   flutter_form_builder: ^9.2.0

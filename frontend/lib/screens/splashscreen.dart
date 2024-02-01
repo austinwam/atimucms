@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'homepage/homenavi.dart';
+import 'homepage/home.dart';
 
 class Splashpage extends StatefulWidget {
   const Splashpage({super.key});

@@ -12,6 +12,8 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => Leadprovider()),
         ChangeNotifierProvider(create: (_) => Accountprovider()),
+        ChangeNotifierProvider(create: (_) => Meetprovider()),
+        ChangeNotifierProvider(create: (_) => Userprovider()),
       ],
       child: const MyApp(),
     ),
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
         return MaterialApp(
-          title: 'rusterp/cms',
+          title: 'Atimucms',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
               // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
