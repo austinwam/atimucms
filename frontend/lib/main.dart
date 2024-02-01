@@ -28,16 +28,18 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
         return MaterialApp(
-          title: 'Atimucms',
+          title: 'Atimucms/erp',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-              // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-              //   backgroundColor: Color.fromARGB(255, 17, 140, 107),
+            // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            //   backgroundColor: Color.fromARGB(255, 17, 140, 107),
 
-              // ),
-              appBarTheme: const AppBarTheme(
-            color: Color.fromARGB(255, 17, 140, 107),
-          )),
+            // ),
+            appBarTheme: const AppBarTheme(
+              color: Color.fromARGB(255, 17, 140, 107),
+            ),
+          ),
+          builder: BotToastInit(),
           home: const Splashpage(),
         );
       },
