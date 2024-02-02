@@ -10,7 +10,7 @@
     "show": 431,
     "database": 4,
     "databaseName": "rustcrm",
-    "canvasType": "@dineug/erd-editor/builtin-generator-code",
+    "canvasType": "@dineug/erd-editor/builtin-schema-sql",
     "language": 1,
     "tableNameCase": 4,
     "columnNameCase": 2,
@@ -88,7 +88,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171982,
           "createAt": 1705485266289
         }
       },
@@ -122,7 +122,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171985,
           "createAt": 1705485320246
         }
       },
@@ -158,7 +158,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171987,
           "createAt": 1705486330557
         }
       },
@@ -193,7 +193,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330611,
+          "updateAt": 1706896171989,
           "createAt": 1705488717274
         }
       },
@@ -226,7 +226,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171990,
           "createAt": 1705490573415
         }
       },
@@ -267,7 +267,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330615,
+          "updateAt": 1706896172002,
           "createAt": 1705491361194
         }
       },
@@ -294,7 +294,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330616,
+          "updateAt": 1706896172003,
           "createAt": 1705491619708
         }
       },
@@ -331,7 +331,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1706171330620,
+          "updateAt": 1706896172004,
           "createAt": 1705492148406
         }
       }
@@ -353,7 +353,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330601,
+          "updateAt": 1706896171979,
           "createAt": 1705485266290
         }
       },
@@ -373,7 +373,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330601,
+          "updateAt": 1706896171979,
           "createAt": 1705485266290
         }
       },
@@ -393,7 +393,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330602,
+          "updateAt": 1706896171980,
           "createAt": 1705485266290
         }
       },
@@ -413,7 +413,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330604,
+          "updateAt": 1706896171980,
           "createAt": 1705485266290
         }
       },
@@ -433,7 +433,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330604,
+          "updateAt": 1706896171980,
           "createAt": 1705485266290
         }
       },
@@ -453,7 +453,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330605,
+          "updateAt": 1706896171980,
           "createAt": 1705485266291
         }
       },
@@ -473,7 +473,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330605,
+          "updateAt": 1706896171981,
           "createAt": 1705485266291
         }
       },
@@ -493,7 +493,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330605,
+          "updateAt": 1706896171981,
           "createAt": 1705485266291
         }
       },
@@ -513,7 +513,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330605,
+          "updateAt": 1706896171981,
           "createAt": 1705485266291
         }
       },
@@ -533,7 +533,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330605,
+          "updateAt": 1706896171982,
           "createAt": 1705485266291
         }
       },
@@ -553,7 +553,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171982,
           "createAt": 1705485266291
         }
       },
@@ -573,7 +573,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171982,
           "createAt": 1705485266291
         }
       },
@@ -613,7 +613,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171983,
           "createAt": 1705485369541
         }
       },
@@ -633,7 +633,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171984,
           "createAt": 1705485409568
         }
       },
@@ -673,7 +673,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330606,
+          "updateAt": 1706896171984,
           "createAt": 1705485709156
         }
       },
@@ -693,7 +693,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171984,
           "createAt": 1705485731319
         }
       },
@@ -713,7 +713,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171985,
           "createAt": 1705485812501
         }
       },
@@ -753,7 +753,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171985,
           "createAt": 1705486343512
         }
       },
@@ -773,7 +773,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171986,
           "createAt": 1705486364693
         }
       },
@@ -793,7 +793,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171986,
           "createAt": 1705486388181
         }
       },
@@ -833,7 +833,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171985,
           "createAt": 1705488600973
         }
       },
@@ -853,7 +853,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171986,
           "createAt": 1705488636962
         }
       },
@@ -873,7 +873,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171987,
           "createAt": 1705488683456
         }
       },
@@ -893,7 +893,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330609,
+          "updateAt": 1706896171987,
           "createAt": 1705488735553
         }
       },
@@ -913,7 +913,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330609,
+          "updateAt": 1706896171988,
           "createAt": 1705488767652
         }
       },
@@ -933,7 +933,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330609,
+          "updateAt": 1706896171988,
           "createAt": 1705488794918
         }
       },
@@ -953,7 +953,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330609,
+          "updateAt": 1706896171988,
           "createAt": 1705488825744
         }
       },
@@ -973,7 +973,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330610,
+          "updateAt": 1706896171989,
           "createAt": 1705489868440
         }
       },
@@ -993,7 +993,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330611,
+          "updateAt": 1706896171989,
           "createAt": 1705489888735
         }
       },
@@ -1013,7 +1013,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330611,
+          "updateAt": 1706896171989,
           "createAt": 1705490609624
         }
       },
@@ -1033,7 +1033,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330611,
+          "updateAt": 1706896171989,
           "createAt": 1705490643003
         }
       },
@@ -1053,7 +1053,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330612,
+          "updateAt": 1706896171990,
           "createAt": 1705490856792
         }
       },
@@ -1073,7 +1073,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330612,
+          "updateAt": 1706896171990,
           "createAt": 1705490881082
         }
       },
@@ -1093,7 +1093,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171990,
           "createAt": 1705490900402
         }
       },
@@ -1113,7 +1113,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171990,
           "createAt": 1705491131042
         }
       },
@@ -1133,7 +1133,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171991,
           "createAt": 1705491370358
         }
       },
@@ -1153,7 +1153,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171992,
           "createAt": 1705491390401
         }
       },
@@ -1173,7 +1173,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330613,
+          "updateAt": 1706896171992,
           "createAt": 1705491410764
         }
       },
@@ -1193,7 +1193,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896171993,
           "createAt": 1705491417236
         }
       },
@@ -1213,7 +1213,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896171993,
           "createAt": 1705491467350
         }
       },
@@ -1233,7 +1233,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896171994,
           "createAt": 1705491506790
         }
       },
@@ -1253,7 +1253,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896172002,
           "createAt": 1705491537181
         }
       },
@@ -1273,7 +1273,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330615,
+          "updateAt": 1706896172002,
           "createAt": 1705491571668
         }
       },
@@ -1293,7 +1293,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330616,
+          "updateAt": 1706896172002,
           "createAt": 1705491634860
         }
       },
@@ -1313,7 +1313,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330616,
+          "updateAt": 1706896172003,
           "createAt": 1705491795293
         }
       },
@@ -1333,7 +1333,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330616,
+          "updateAt": 1706896172003,
           "createAt": 1705491829461
         }
       },
@@ -1353,7 +1353,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330617,
+          "updateAt": 1706896172003,
           "createAt": 1705492158210
         }
       },
@@ -1373,7 +1373,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330618,
+          "updateAt": 1706896172003,
           "createAt": 1705492200684
         }
       },
@@ -1393,7 +1393,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330618,
+          "updateAt": 1706896172003,
           "createAt": 1705492241845
         }
       },
@@ -1413,7 +1413,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330619,
+          "updateAt": 1706896172003,
           "createAt": 1705492272324
         }
       },
@@ -1433,7 +1433,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330619,
+          "updateAt": 1706896172004,
           "createAt": 1705492289716
         }
       },
@@ -1453,7 +1453,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330619,
+          "updateAt": 1706896172004,
           "createAt": 1705492341429
         }
       },
@@ -1473,7 +1473,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330620,
+          "updateAt": 1706896172004,
           "createAt": 1705492351717
         }
       },
@@ -1493,7 +1493,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330620,
+          "updateAt": 1706896172004,
           "createAt": 1705492377644
         }
       },
@@ -1513,7 +1513,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330610,
+          "updateAt": 1706896171988,
           "createAt": 1705559207474
         }
       },
@@ -1533,7 +1533,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896171992,
           "createAt": 1705563405576
         }
       },
@@ -1553,7 +1553,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330614,
+          "updateAt": 1706896171992,
           "createAt": 1705563441577
         }
       },
@@ -1573,7 +1573,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330608,
+          "updateAt": 1706896171986,
           "createAt": 1705565276603
         }
       },
@@ -1593,7 +1593,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1706171330607,
+          "updateAt": 1706896171985,
           "createAt": 1705565458894
         }
       }
