@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/pointofsale/homepos.dart';
 
 import 'package:frontend/screens/users/userpage.dart';
 import 'package:gap/gap.dart';
@@ -65,11 +66,11 @@ class Homepage extends StatelessWidget {
                   Navigator.push<void>(
                     context,
                     MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const Leadpage(),
+                      builder: (BuildContext context) => const Homepos(),
                     ),
                   );
                 },
-                name: "leads",
+                name: "point of sale",
               ),
             ],
           ),
