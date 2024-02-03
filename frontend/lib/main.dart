@@ -31,10 +31,6 @@ class MyApp extends StatelessWidget {
           title: 'Atimucms/erp',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            //   backgroundColor: Color.fromARGB(255, 17, 140, 107),
-
-            // ),
             appBarTheme: const AppBarTheme(
               color: Color.fromARGB(255, 17, 140, 107),
             ),

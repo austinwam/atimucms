@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:frontend/screens/homepage/settingspage.dart';
+import '../leads/leadpage.dart';
 import 'homepage.dart';
-
-// class Homenavipage extends StatelessWidget {
-//   const Homenavipage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Placeholder();
-//   }
-// }
 
 class Homenavipage extends StatefulWidget {
   const Homenavipage({super.key});
@@ -23,15 +15,11 @@ class _HomenavipageState extends State<Homenavipage> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const Homepage(),
-    const Text(
-      'Index 1: Business',
-    ),
+    const Leadpage(),
     const Text(
       'Index 2: School',
     ),
-    const Text(
-      'Index 3: setting',
-    ),
+    const Settingspage(),
   ];
 
   void _onItemTapped(int index) {
@@ -52,22 +40,26 @@ class _HomenavipageState extends State<Homenavipage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+            backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
             label: 'Leads',
+            backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.inventory),
             label: 'inv',
+            backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'settings',
+            backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: const Color.fromARGB(255, 17, 140, 107),
+        selectedItemColor: const Color.fromARGB(255, 240, 224, 8),
         onTap: _onItemTapped,
       ),
     );

@@ -11,6 +11,9 @@ class Leadpage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("leads"),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.add_box))
+        ],
       ),
       body: Stack(
         children: [
@@ -23,32 +26,36 @@ class Leadpage extends StatelessWidget {
               width: 98.w,
             ),
           ),
-          Positioned(
-            bottom: 0.0001,
-            height: 4.h,
-            child: MaterialButton(
-                height: 5.h,
-                minWidth: 100.w,
-                color: const Color.fromARGB(255, 17, 140, 107),
-                child: const Text("add lead"),
-                onPressed: () {}),
-          ),
+          // Positioned(
+          //   bottom: 0.0001,
+          //   height: 4.h,
+          //   child: MaterialButton(
+          //       height: 5.h,
+          //       minWidth: 100.w,
+          //       color: const Color.fromARGB(255, 17, 140, 107),
+          //       child: const Text("add lead"),
+          //       onPressed: () {}),
+          // ),
           Positioned(
             top: 0.0001,
             height: 3.5.h,
-            child: Container(
-              color: Colors.amber,
-              height: 3.5.h,
-              width: 100.w,
+            child: Card(
+              child: SizedBox(
+                // color: Colors.amber,
+                height: 3.5.h,
+                width: 100.w,
+              ),
             ),
           ),
           Positioned(
             top: 3.6.h,
             height: 3.5.h,
-            child: Container(
-              color: const Color.fromARGB(255, 101, 86, 39),
-              height: 3.5.h,
-              width: 100.w,
+            child: Card(
+              child: SizedBox(
+                // color: const Color.fromARGB(255, 101, 86, 39),
+                height: 3.5.h,
+                width: 100.w,
+              ),
             ),
           ),
         ],
