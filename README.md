@@ -15,3 +15,5 @@ ERP stands for enterprise resource planning, but what does ERP mean? The simples
 - [ ] accounting management.
 - [ ] Inventory management.
 - [ ] Point of sale.
+
+![Atimucms/erp-homepage](homepage.png)
