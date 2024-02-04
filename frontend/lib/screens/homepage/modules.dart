@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/hr/hr.dart';
 import 'package:frontend/screens/pointofsale/homepos.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../documents/documents.dart';
+import '../teams/teams.dart';
 import '../users/userpage.dart';
 import 'homecard.dart';
 
@@ -39,7 +42,12 @@ class Modulesui extends StatelessWidget {
                   width: 22.5.w,
                   iconData: Icons.group_add,
                   ontap: () {
-                    print("object");
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const Teamhome(),
+                      ),
+                    );
                   },
                   name: "teams",
                 ),
@@ -47,14 +55,12 @@ class Modulesui extends StatelessWidget {
                   height: 5.h,
                   width: 22.5.w,
                   iconData: Icons.adjust,
-                  ontap: () {
-                    print("meetings");
-                  },
+                  ontap: () {},
                   name: "meetings",
                 ),
                 Homecard(
                   height: 5.h,
-                  iconData: Icons.line_axis_sharp,
+                  iconData: Icons.store,
                   width: 22.5.w,
                   ontap: () {
                     Navigator.push<void>(
@@ -64,7 +70,7 @@ class Modulesui extends StatelessWidget {
                       ),
                     );
                   },
-                  name: "invetory",
+                  name: "inventory",
                 ),
               ],
             ),
@@ -80,7 +86,7 @@ class Modulesui extends StatelessWidget {
                     Navigator.push<void>(
                       context,
                       MaterialPageRoute<void>(
-                        builder: (BuildContext context) => const Userpage(),
+                        builder: (BuildContext context) => const Documentpage(),
                       ),
                     );
                   },
@@ -91,7 +97,12 @@ class Modulesui extends StatelessWidget {
                   width: 16.w,
                   iconData: Icons.groups_2_outlined,
                   ontap: () {
-                    print("hr");
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const Hrpage(),
+                      ),
+                    );
                   },
                   name: "H-R",
                 ),
@@ -116,7 +127,7 @@ class Modulesui extends StatelessWidget {
                       ),
                     );
                   },
-                  name: "invetory",
+                  name: "sales",
                 ),
               ],
             ),

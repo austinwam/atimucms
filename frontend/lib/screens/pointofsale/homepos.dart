@@ -7,7 +7,7 @@ class Homepos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("point of sales"),
+        title: const Text("inventory"),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_bag))
         ],
