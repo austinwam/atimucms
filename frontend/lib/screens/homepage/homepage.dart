@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import '../leads/leads.dart';
 import 'homecard.dart';
+import 'modules.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -27,53 +28,7 @@ class Homepage extends StatelessWidget {
             ),
           ),
           Gap(1.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Homecard(
-                height: 7.h,
-                width: 22.w,
-                ontap: () {
-                  Navigator.push<void>(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const Userpage(),
-                    ),
-                  );
-                },
-                name: "user",
-              ),
-              Homecard(
-                height: 7.h,
-                width: 22.w,
-                ontap: () {
-                  print("object");
-                },
-                name: "products",
-              ),
-              Homecard(
-                height: 7.h,
-                width: 22.w,
-                ontap: () {
-                  print("meetings");
-                },
-                name: "meetings",
-              ),
-              Homecard(
-                height: 7.h,
-                width: 22.w,
-                ontap: () {
-                  Navigator.push<void>(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const Homepos(),
-                    ),
-                  );
-                },
-                name: "point of sale",
-              ),
-            ],
-          ),
+          const Modulesui(),
           Padding(
             padding: const EdgeInsets.only(left: 8.0, right: 8),
             child: Row(

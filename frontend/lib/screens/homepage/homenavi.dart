@@ -17,7 +17,7 @@ class _HomenavipageState extends State<Homenavipage> {
     const Homepage(),
     const Leadpage(),
     const Text(
-      'Index 2: School',
+      'Index 2: transactins',
     ),
     const Settingspage(),
   ];
@@ -48,8 +48,8 @@ class _HomenavipageState extends State<Homenavipage> {
             backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.inventory),
-            label: 'inv',
+            icon: Icon(Icons.list),
+            label: 'transactions',
             backgroundColor: Color.fromARGB(255, 17, 140, 107),
           ),
           BottomNavigationBarItem(
