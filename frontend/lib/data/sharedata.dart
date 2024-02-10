@@ -4,16 +4,18 @@ enum Datatype {
   users("users"),
   accounts("accounts"),
   meets("meets");
+
   const Datatype(this.text);
   final String text;
 }
 
-enum Data {
+enum Kindid {
   token("token"),
   userid("userid"),
+  theme("theme"),
   isfirsttime("isfirsttime");
 
-  const Data(this.text);
+  const Kindid(this.text);
   final String text;
 }
 

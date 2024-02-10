@@ -7,7 +7,7 @@ import 'package:http/http.dart';
 
 class Apirequest {
   Future<void> postdata(url, data) async {
-    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var token = Sharedpref().getdata(Kind.string.text, Kindid.token.text);
     var eurl = Uri.parse(url);
     var headers = {
       'Content-type': 'application/json',
@@ -18,7 +18,7 @@ class Apirequest {
   }
 
   Future<void> postdatawithtoken(url, data) async {
-    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var token = Sharedpref().getdata(Kind.string.text, Kindid.token.text);
     var eurl = Uri.parse(url);
     var headers = {
       'Content-type': 'application/json',
@@ -29,7 +29,7 @@ class Apirequest {
   }
 
   Future<void> putwithtoken(url, data) async {
-    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var token = Sharedpref().getdata(Kind.string.text, Kindid.token.text);
     var eurl = Uri.parse(url);
     var headers = {
       'Content-type': 'application/json',
@@ -40,7 +40,7 @@ class Apirequest {
   }
 
   Future<void> refresh(datatype) async {
-    var token = Sharedpref().getdata(Kind.string.text, Data.token.text);
+    var token = Sharedpref().getdata(Kind.string.text, Kindid.token.text);
     var timestamp = Sharedpref().gettime(datatype);
     var serverurl = "http://127.0.0.1:8000/refresh";
     var url = Uri.https(serverurl);
