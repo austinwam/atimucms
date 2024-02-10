@@ -17,6 +17,7 @@ class Modulesui extends StatelessWidget {
       height: 13.h,
       width: 100.w,
       child: Card(
+        elevation: 0.4,
         child: Column(
           children: [
             Row(

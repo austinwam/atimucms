@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Homecard extends StatelessWidget {
   final double height, width;
@@ -18,6 +19,7 @@ class Homecard extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Card(
+        elevation: .4,
         child: SizedBox(
           height: height,
           width: width,
@@ -30,6 +32,6 @@ class Homecard extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ).animate().scale(begin: const Offset(2, 0), curve: Curves.elasticOut);
   }
 }

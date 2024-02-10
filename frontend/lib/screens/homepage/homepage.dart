@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/pointofsale/homepos.dart';
 
-import 'package:frontend/screens/users/userpage.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import '../leads/leads.dart';
-import 'homecard.dart';
+
 import 'modules.dart';
 
 class Homepage extends StatelessWidget {
