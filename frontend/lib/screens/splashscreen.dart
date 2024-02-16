@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:frontend/screens/auth/auth.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -23,7 +24,7 @@ class _SplashpageState extends State<Splashpage> {
     Navigator.pushReplacement<void, void>(
       context,
       MaterialPageRoute<void>(
-        builder: (BuildContext context) => const Homenavipage(),
+        builder: (BuildContext context) => const Loginpage(),
       ),
     );
   }

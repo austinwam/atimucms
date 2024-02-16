@@ -1,39 +1,33 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:frontend/providers/providers.dart';
-
 import 'package:frontend/screens/screens.dart';
-import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => Leadprovider()),
-        ChangeNotifierProvider(create: (_) => Accountprovider()),
-        ChangeNotifierProvider(create: (_) => Meetprovider()),
-        ChangeNotifierProvider(create: (_) => Userprovider()),
-        ChangeNotifierProvider(create: (_) => Settingprovider()),
-      ],
-      child: const MyApp(),
-    ),
+    const ProviderScope(child: MyApp()),
   );
+  
+  // );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
-        return Consumer<Settingprovider>(builder: (context, setdata, _) {
+        return Consumer(builder: (context, ref, _) {
           return MaterialApp(
             title: 'Atimucms/erp',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              brightness: setdata.theme == true ? Brightness.dark : null,
+              brightness: ref.watch(settingprovider).theme == true
+                  ? Brightness.dark
+                  : null,
               appBarTheme: const AppBarTheme(
                 color: Color.fromARGB(255, 17, 140, 107),
               ),

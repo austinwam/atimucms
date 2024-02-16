@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:frontend/providers/providers.dart';
-import 'package:provider/provider.dart';
+import 'package:frontend/screens/auth/auth.dart';
+
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class Settingspage extends StatelessWidget {
+class Settingspage extends ConsumerWidget {
   const Settingspage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
-        child: Consumer<Settingprovider>(builder: (context, setdata, _) {
+        child: Consumer(builder: (context, setdata, _) {
           return Column(
             children: [
               CircleAvatar(
@@ -52,11 +54,24 @@ class Settingspage extends StatelessWidget {
               const Divider(),
               Settitem(
                 title: "theme",
-                icon: setdata.theme == true
+                icon: ref.read(settingprovider).theme == true
                     ? Icons.sunny_snowing
                     : Icons.wb_sunny,
                 ontap: () {
-                  setdata.changetheme();
+                  ref.watch(settingprovider).changetheme();
+                },
+              ),
+              const Divider(),
+              Settitem(
+                title: "change password",
+                icon: Icons.logout,
+                ontap: () {
+                  Navigator.push<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const Changepassword(),
+                    ),
+                  );
                 },
               ),
               const Divider(),
@@ -67,6 +82,7 @@ class Settingspage extends StatelessWidget {
                   print("logout");
                 },
               ),
+              const Divider(),
             ],
           );
         }),
@@ -94,7 +110,7 @@ class Settitem extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-              width: 20.w,
+              width: 70.w,
               child: Text(
                 title,
                 style: TextStyle(fontSize: 20.sp),

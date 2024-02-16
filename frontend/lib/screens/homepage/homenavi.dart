@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/homepage/settingspage.dart';
+import 'package:frontend/screens/settingspage.dart';
 import '../leads/leadpage.dart';
 import 'homepage.dart';
 
