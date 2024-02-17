@@ -9,8 +9,6 @@ void main() {
   runApp(
     const ProviderScope(child: MyApp()),
   );
-  
-  // );
 }
 
 class MyApp extends ConsumerWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/settingspage.dart';
+import '../accounts/accounts.dart';
 import '../leads/leadpage.dart';
 import 'homepage.dart';
 
@@ -16,9 +17,7 @@ class _HomenavipageState extends State<Homenavipage> {
   static final List<Widget> _widgetOptions = <Widget>[
     const Homepage(),
     const Leadpage(),
-    const Text(
-      'Index 2: transactins',
-    ),
+    const Transactionpage(),
     const Settingspage(),
   ];
 

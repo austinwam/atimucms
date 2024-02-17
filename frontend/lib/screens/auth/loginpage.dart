@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:frontend/screens/homepage/homenavi.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -22,16 +23,11 @@ class _LoginpageState extends State<Loginpage> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              height: 80.h,
+              height: 90.h,
               width: 96.w,
               child: Column(
                 children: [
-                  Gap(5.h),
-                  Text(
-                    "Atimu",
-                    style: TextStyle(color: Colors.green, fontSize: 0.dp),
-                  ),
-                  Gap(10.h),
+                  Gap(12.h),
                   FormBuilderTextField(
                     name: 'email',
                     decoration: const InputDecoration(labelText: 'Email'),
@@ -53,7 +49,15 @@ class _LoginpageState extends State<Loginpage> {
                   MaterialButton(
                       color: Colors.green,
                       minWidth: 95.w,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const Homenavipage(),
+                          ),
+                        );
+                      },
                       child: const Text("login"))
                 ],
               ),
