@@ -66,20 +66,60 @@ class Teamui extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
                       width: 28.w,
-                      height: 13.h,
+                      height: 12.h,
                       color: Colors.green,
                     ),
                   ),
                 ),
-                Gap(5.w)
+                Gap(5.w),
+                SizedBox(
+                  height: 11.h,
+                  width: 60.w,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "alpha team",
+                        style: TextStyle(fontSize: 18.sp),
+                      ),
+                      Text(
+                        "active: true",
+                        style: TextStyle(fontSize: 15.sp),
+                      ),
+                      // Text(
+                      //   "detail:hdahsdfi uahsfiuha dfiuhiuh",
+                      //   style: TextStyle(fontSize: 15.sp),
+                      // ),
+                      const Text("task:  12/23"),
+                      Container(
+                        height: 2.h,
+                        width: 60.w,
+                        color: Colors.black12,
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
             const Divider(),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Task"),
-                Text("members"),
+                SizedBox(
+                  width: 50.w,
+                  child: Text(
+                    "Tasks",
+                    style: TextStyle(fontSize: 18.sp),
+                  ),
+                ),
+                SizedBox(
+                  width: 50.w,
+                  child: Text(
+                    "Members",
+                    style: TextStyle(fontSize: 18.sp),
+                  ),
+                ),
               ],
             ),
             const Divider(),
