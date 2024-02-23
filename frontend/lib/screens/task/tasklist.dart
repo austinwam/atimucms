@@ -8,21 +8,42 @@ class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.h,
-      width: 95.w,
+      height: height,
+      width: width,
       child: ListView.builder(
-          itemCount: 3,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.only(top: 2, bottom: 4.h),
+          itemCount: 20,
           itemBuilder: (context, index) {
-            return SizedBox(
-              height: 60.h,
-              width: 80.w,
-              child: Row(
-                children: [
-                  Text(
-                    " dfdsfdsf",
-                    style: TextStyle(fontSize: 15.dp),
-                  ),
-                ],
+            return Padding(
+              padding: const EdgeInsets.only(left: 4, right: 4, bottom: 5),
+              child: SizedBox(
+                height: 6.h,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      width: 65.w,
+                      height: 6.h,
+                      child: Text(
+                        "Well, whatever we do, I'd like to do it as a family.",
+                        style: TextStyle(fontSize: 15.5.sp),
+                      ),
+                    ),
+                    const VerticalDivider(),
+                    SizedBox(
+                        width: 26.w,
+                        height: 5.h,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text("finished"),
+                            Text(
+                                "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}"),
+                          ],
+                        )),
+                  ],
+                ),
               ),
             );
           }),

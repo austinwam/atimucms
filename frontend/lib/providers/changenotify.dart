@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:frontend/providers/providers.dart';
+import 'package:frontend/providers/teamsprovider.dart';
 
 import 'transaction.dart';
 
@@ -19,8 +20,9 @@ final settingprovider =
     ChangeNotifierProvider<Settingprovider>((ref) => Settingprovider());
 final transprovider =
     ChangeNotifierProvider<Transactionprovider>((ref) => Transactionprovider());
-  
-  
+
+final teamsprovider =
+    ChangeNotifierProvider<Teamsprovider>((ref) => Teamsprovider());
   // runApp(
   //   MultiProvider(
   //     providers: [

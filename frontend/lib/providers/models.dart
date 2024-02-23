@@ -254,3 +254,15 @@ class Usermodel {
     timestamp = map['timestamp'];
   }
 }
+
+class Teammodel {
+  int? leadid;
+  String? name;
+  bool? active;
+  Teammodel({this.leadid, this.name, this.active});
+  Teammodel.fromMap(Map<String, dynamic> map) {
+    leadid = map["leadid"];
+    name = map["name"];
+    active = map['active'];
+  }
+}
