@@ -12,38 +12,38 @@ class Hrpage extends StatelessWidget {
         title: const Text("human resource"),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Card(
-              child: SizedBox(
-                width: 37.w,
-                height: 3.2.h,
-                child: const Center(
-                  child: Text("total pay: ksh 510,000"),
-                ),
-              ),
-            ),
-            Card(
-              child: SizedBox(
-                width: 22.w,
-                height: 3.2.h,
-                child: const Center(
-                  child: Text("departments"),
-                ),
-              ),
-            ),
-            Card(
-              child: SizedBox(
-                width: 19.w,
-                height: 3.2.h,
-                child: const Center(
-                  child: Text("requests"),
-                ),
-              ),
-            ),
-          ],
-        ),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: [
+        //     Card(
+        //       child: SizedBox(
+        //         width: 37.w,
+        //         height: 3.2.h,
+        //         child: const Center(
+        //           child: Text("total pay: ksh 510,000"),
+        //         ),
+        //       ),
+        //     ),
+        //     Card(
+        //       child: SizedBox(
+        //         width: 22.w,
+        //         height: 3.2.h,
+        //         child: const Center(
+        //           child: Text("departments"),
+        //         ),
+        //       ),
+        //     ),
+        //     Card(
+        //       child: SizedBox(
+        //         width: 19.w,
+        //         height: 3.2.h,
+        //         child: const Center(
+        //           child: Text("requests"),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         Padding(
           padding: const EdgeInsets.only(left: 4.0, right: 4.0),
           child: Row(
@@ -63,7 +63,7 @@ class Hrpage extends StatelessWidget {
                   height: 3.2.h,
                   child: const Card(child: Center(child: Text("off: 4")))),
               SizedBox(
-                  width: 22.w,
+                  width: 16.w,
                   height: 3.2.h,
                   child: const Card(child: Center(child: Text("off: 4")))),
               SizedBox(
@@ -99,7 +99,7 @@ class Hrpage extends StatelessWidget {
                   padding: const EdgeInsets.only(
                     left: 4.0,
                     right: 4,
-                    bottom: 2,
+                    bottom: 4,
                     top: 3,
                   ),
                   child: Row(
